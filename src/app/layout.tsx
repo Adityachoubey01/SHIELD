@@ -4,7 +4,7 @@ import { AuthProvider } from '@/components/auth/auth-provider';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'GuardianGate',
+  title: 'SHIELD',
   description: 'Secure your world with voice and gesture.',
 };
 

@@ -1,14 +1,14 @@
-import { GuardianGateLogo } from '@/components/guardian-gate-logo';
+import { ShieldLogo } from '@/components/shield-logo';
 import { VoiceLogin } from '@/components/auth/voice-login';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-600 p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="flex flex-col items-center text-center">
-          <GuardianGateLogo className="mb-4 h-16 w-16 text-primary" />
+          <ShieldLogo className="mb-4 h-16 w-16 text-primary" />
           <h1 className="font-headline text-3xl font-bold text-primary">
-            GuardianGate
+            SHIELD
           </h1>
           <p className="text-muted-foreground">
             The future of authentication is here.

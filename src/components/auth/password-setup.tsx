@@ -109,7 +109,7 @@ export function PasswordSetup() {
       {step === 1 && (
         <>
           <CardContent className="space-y-4">
-            <CardDescription className='flex items-center gap-2'><Mic /> Create a voice password like a clap, whistle, or a short word.</CardDescription>
+            <CardDescription className='flex items-center gap-2'><Mic /> Step 1: Create a voice password like a clap, whistle, or a short word.</CardDescription>
             <div className="flex flex-col items-center justify-center gap-4 p-6 border-2 border-dashed rounded-lg">
               {isRecording ? (
                 <Button onClick={handleStopRecording} variant="destructive" size="lg" className="w-full">
@@ -139,7 +139,7 @@ export function PasswordSetup() {
       {step === 2 && (
         <>
           <CardContent className="space-y-4">
-            <CardDescription className='flex items-center gap-2'><Hand/> Create your secret gesture by clicking the squares in a sequence.</CardDescription>
+            <CardDescription className='flex items-center gap-2'><Hand/> Step 2: Create your secret gesture by clicking the squares in a sequence.</CardDescription>
             <div className="grid grid-cols-3 gap-2 md:gap-4">
               {Array.from({ length: GRID_SIZE }).map((_, index) => (
                 <button

@@ -102,7 +102,7 @@ export function GestureLogin() {
     <Card className="shadow-lg">
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2"><Hand /> Step 2: Gesture</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Hand /> Gesture Authentication</CardTitle>
           <div className="text-right">
             <p className="text-sm font-medium text-destructive">{gestureAttempts} attempts left</p>
           </div>

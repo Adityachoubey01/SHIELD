@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { LogOut } from 'lucide-react';
-import { GuardianGateLogo } from '@/components/guardian-gate-logo';
+import { ShieldLogo } from '@/components/shield-logo';
 
 export default function DashboardPage() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -22,7 +22,7 @@ export default function DashboardPage() {
   if (!isAuthenticated || !user) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <GuardianGateLogo className="h-12 w-12 animate-spin text-primary" />
+        <ShieldLogo className="h-12 w-12 animate-spin text-primary" />
       </div>
     );
   }
@@ -36,7 +36,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-600 p-4">
       <Card className="w-full max-w-md shadow-2xl">
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 flex items-center justify-center">

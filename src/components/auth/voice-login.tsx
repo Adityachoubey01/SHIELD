@@ -129,7 +129,7 @@ export function VoiceLogin() {
     <Card className="shadow-lg">
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2"><Mic /> Step 1: Voice</CardTitle>
+          <CardTitle className="flex items-center gap-2"><Mic /> Voice Authentication</CardTitle>
           {isClient && (
             <div className="text-right">
               <p className="text-sm font-medium text-destructive">{voiceAttempts} attempts left</p>
