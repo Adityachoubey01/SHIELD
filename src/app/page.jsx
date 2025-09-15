@@ -7,7 +7,7 @@ export default function Home() {
       <div className="w-full max-w-md space-y-6">
         <div className="flex flex-col items-center text-center">
           <ShieldLogo className="mb-4 h-16 w-16 text-white drop-shadow-lg" />
-          <h1 className="font-headline text-5xl font-bold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+          <h1 className="font-headline text-5xl font-bold tracking-tight bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
             SHIELD
           </h1>
           <p className="text-lg text-indigo-200">
