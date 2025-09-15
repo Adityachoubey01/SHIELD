@@ -1,6 +1,24 @@
-# SHIELD (formerly Firebase Studio)
+# SHIELD
 
-This is a NextJS starter in Firebase Studio.
+This is a Next.js starter project.
+
+## Running the Development Server
+
+To run the app locally, use the following command:
+
+```bash
+npm run dev
+```
+
+This will start the development server, typically on `http://localhost:3000`.
+
+### Customizing the Port
+
+If you want to run the app on a different port, you can set the `PORT` environment variable before running the command. For example, to run on port `8080`:
+
+```bash
+PORT=8080 npm run dev
+```
 
 ## Accessing Your Code on Another System
 
