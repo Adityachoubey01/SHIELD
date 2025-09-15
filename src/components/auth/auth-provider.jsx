@@ -24,7 +24,7 @@ export function AuthProvider({ children }) {
   const [gestureAttempts, setGestureAttempts] = useState(GESTURE_ATTEMPTS_LIMIT);
   const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
-
+//it is repsonsible in loading the data when this page starts.
   useEffect(() => {
     try {
       const storedUser = localStorage.getItem('gg_user');

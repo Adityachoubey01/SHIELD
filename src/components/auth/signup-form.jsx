@@ -16,7 +16,7 @@ const formSchema = z.object({
   age: z.string().refine(val => !isNaN(parseInt(val, 10)) && parseInt(val, 10) > 0, {
     message: 'Please enter a valid age.',
   }),
-  contact: z.string().min(10, 'Contact number must be at least 10 digits.'),
+  contact: z.string().min(10, 'Contact number must be 10 digits.').max(10, 'Contact number must be 10 digits.'),
 });
 
 export function SignupForm() {
@@ -33,14 +33,15 @@ export function SignupForm() {
   });
 
   function onSubmit(values) {
-    signup(values);
+    // Prefix the contact number with +91 before submitting
+    signup({ ...values, contact: `+91${values.contact}` });
   }
 
   return (
     <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="flex items-center gap-2"><UserPlus /> Your Details</CardTitle>
-        <CardDescription>Enter your information to get started.</CardDescription>
+        <CardDescription className="bg-gradient-to-r from-blue-900 to-purple-900 bg-clip-text font-semibold text-transparent">Join SHIELD to experience next-gen security.</CardDescription>
       </CardHeader>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -78,7 +79,18 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Contact Number</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder="Enter your contact number" {...field} />
+                    <div className="flex items-center">
+                      <span className="inline-flex h-10 items-center rounded-l-md border border-r-0 border-input bg-background px-3 text-muted-foreground sm:text-sm">
+                        +91
+                      </span>
+                      <Input
+                        type="tel"
+                        placeholder="000-000-0000"
+                        className="rounded-l-none"
+                        maxLength="10"
+                        {...field}
+                      />
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
