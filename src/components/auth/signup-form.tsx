@@ -39,8 +39,8 @@ export function SignupForm() {
   return (
     <Card className="shadow-lg">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2"><UserPlus /> Your Details</CardTitle>
-        <CardDescription>Enter your information to get started.</CardDescription>
+        <CardTitle className="flex items-center gap-2"><UserPlus /> Personal Details</CardTitle>
+        <CardDescription></CardDescription>
       </CardHeader>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
