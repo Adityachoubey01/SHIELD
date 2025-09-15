@@ -52,7 +52,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder="Enter your name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -65,7 +65,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Age</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="25" {...field} />
+                    <Input type="number" placeholder="Enter your age" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -78,7 +78,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Contact Number</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder="+1 234 567 890" {...field} />
+                    <Input type="tel" placeholder="Enter your contact number" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -28,6 +28,7 @@ export default function DashboardPage() {
   }
 
   const getInitials = (name) => {
+    if (!name) return '??';
     return name
       .split(' ')
       .map((n) => n[0])
@@ -41,7 +42,7 @@ export default function DashboardPage() {
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 flex items-center justify-center">
             <Avatar className="h-20 w-20">
-              <AvatarImage src={`https://i.pravatar.cc/150?u=${user.name}`} />
+              <AvatarImage src={`https://api.dicebear.com/8.x/initials/svg?seed=${encodeURIComponent(user.name)}`} alt={`${user.name}'s avatar`} />
               <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
                 {getInitials(user.name)}
               </AvatarFallback>
