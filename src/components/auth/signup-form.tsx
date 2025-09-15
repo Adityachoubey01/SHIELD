@@ -52,7 +52,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder="Acc to GovID" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -65,7 +65,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Age</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="25" {...field} />
+                    <Input type="number" placeholder=" " {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -78,7 +78,20 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Contact Number</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder="+1 234 567 890" {...field} />
+                    <Input type="tel" placeholder="+91" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="Email id"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Contact Number</FormLabel>
+                  <FormControl>
+                    <Input type="tel" placeholder="+91" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

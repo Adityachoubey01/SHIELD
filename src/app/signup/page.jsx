@@ -10,7 +10,7 @@ export default function SignupPage() {
           <h1 className="font-headline text-3xl font-bold text-primary">
             Create an Account
           </h1>
-          <p className="text-muted-foreground">
+          <p className="bg-gradient-to-r from-blue-900 to-purple-900 bg-clip-text font-semibold text-transparent">
             Join SHIELD to experience next-gen security.
           </p>
         </div>
