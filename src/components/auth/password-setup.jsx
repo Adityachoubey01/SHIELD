@@ -6,7 +6,7 @@ import { useAuth } from './auth-provider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Mic, MicOff, Hand, ChevronRight, Check } from 'lucide-react';
+import { Mic, MicOff, Hand, ChevronRight, Check, LogIn } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 
@@ -21,6 +21,7 @@ export function PasswordSetup() {
   const [isRecording, setIsRecording] = useState(false);
   const [audioURL, setAudioURL] = useState(null);
   const [gesturePattern, setGesturePattern] = useState([]);
+  const [setupComplete, setSetupComplete] = useState(false);
   
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
@@ -92,12 +93,27 @@ export function PasswordSetup() {
       return;
     }
     setPasswords({ voice: audioURL, gesture: gesturePattern });
-    toast({
-      title: 'Setup Complete!',
-      description: 'Your new authentication methods have been saved.',
-      className: 'bg-green-500 text-white',
-    });
+    setSetupComplete(true);
   };
+
+  if (setupComplete) {
+    return (
+       <Card className="shadow-lg">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Check /> Success!</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-center">
+            <p className="text-lg font-medium text-green-600">Your account is created successfully.</p>
+            <p className="text-muted-foreground">Get back to login page to login.</p>
+        </CardContent>
+        <CardFooter>
+            <Button onClick={() => router.push('/')} className="w-full">
+               <LogIn className="mr-2 h-4 w-4" /> Go to Login Page
+            </Button>
+        </CardFooter>
+      </Card>
+    );
+  }
 
   return (
     <Card className="shadow-lg">

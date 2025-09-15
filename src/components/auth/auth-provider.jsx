@@ -52,8 +52,8 @@ export function AuthProvider({ children }) {
     setGesturePassword(passwords.gesture);
     localStorage.setItem('gg_voicePassword', passwords.voice);
     localStorage.setItem('gg_gesturePassword', JSON.stringify(passwords.gesture));
-    router.push('/');
-  }, [router]);
+    // router.push('/'); // Will be handled in the component
+  }, []);
   
   const decrementVoiceAttempts = useCallback(() => {
     setVoiceAttempts((prev) => Math.max(0, prev - 1));

@@ -40,7 +40,7 @@ export function SignupForm() {
     <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="flex items-center gap-2"><UserPlus /> Personal Details</CardTitle>
-        <CardDescription></CardDescription>
+        <CardDescription>"To initiate the process, please enter the requested information".</CardDescription>
       </CardHeader>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -91,7 +91,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Email ID</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="email@example.com" {...field} />
+                    <Input type="email" placeholder="example@email.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
