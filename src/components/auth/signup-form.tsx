@@ -78,7 +78,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Contact Number</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder="+91" {...field} />
+                    <Input type="tel" placeholder="+91 " {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -86,7 +86,7 @@ export function SignupForm() {
             />
             <FormField
               control={form.control}
-              name="Email id"
+              name="Email_id"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Email ID</FormLabel>
