@@ -3,8 +3,9 @@ import { VoiceLogin } from '@/components/auth/voice-login';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-black p-4">
-      <div className="w-full max-w-md space-y-6">
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-black p-4">
+      <div className="absolute inset-0 animate-bg-pan-fwd bg-[url('/circuit-board.svg')] bg-cover opacity-0" />
+      <div className="w-full max-w-md space-y-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
         <div className="flex flex-col items-center text-center">
           <ShieldLogo className="mb-4 h-20 w-20 text-white drop-shadow-lg" />
           <h1 className="font-headline text-6xl font-bold tracking-tight bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
