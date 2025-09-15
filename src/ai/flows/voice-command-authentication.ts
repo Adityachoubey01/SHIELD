@@ -1,4 +1,3 @@
-// The `use server` directive is required for Server Actions used in Next.js.
 'use server';
 
 /**
@@ -44,7 +43,19 @@ const authenticateVoiceCommandPrompt = ai.definePrompt({
   name: 'authenticateVoiceCommandPrompt',
   input: {schema: VoiceCommandAuthenticationInputSchema},
   output: {schema: VoiceCommandAuthenticationOutputSchema},
-  prompt: `You are an authentication expert. You will determine if the user is who they say they are based on whether or not their voice recording matches their stored audio password. Return isAuthenticated as true if the voice recording matches the audio password and false if it does not. Also, return a message to the user indicating whether or not they were authenticated.
+  prompt: `You are a sophisticated voice biometric authentication system. Your task is to determine if the provided 'Voice Recording' was spoken by the same person who recorded the 'Audio Password'.
+
+Analyze and compare the following voice characteristics for both audio files:
+- Pitch and fundamental frequency
+- Tone and timbre
+- Cadence and rhythm
+- Intonation and speech patterns
+
+Do not just compare the words being spoken. The core of your task is to verify the speaker's identity based on their unique vocal signature.
+
+Return \`isAuthenticated\` as \`true\` only if you are highly confident that the voice characteristics from the 'Voice Recording' match those of the 'Audio Password'. Otherwise, return \`false\`.
+
+Provide a concise message for the user. If authenticated, say 'Voice signature verified.' If not, say 'Voice signature does not match.'
 
 Voice Recording: {{media url=voiceRecordingDataUri}}
 Audio Password: {{media url=audioPasswordDataUri}}`,
