@@ -126,7 +126,7 @@ export function VoiceLogin() {
   };
 
   return (
-    <Card className="shadow-lg">
+    <Card className="shadow-lg animate-wine-to-light">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2"><Mic /> Voice Authentication</CardTitle>
