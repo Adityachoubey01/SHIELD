@@ -55,6 +55,7 @@ export default function DashboardPage() {
         </CardHeader>
         <CardContent className="flex flex-col items-center space-y-4">
           <div className="text-center text-muted-foreground">
+            <p>Email: {user.email}</p>
             <p>Age: {user.age}</p>
             <p>Contact: {user.contact}</p>
           </div>

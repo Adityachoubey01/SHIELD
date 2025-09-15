@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
+  email: z.string().email('Invalid email address.'),
   age: z.string().refine(val => !isNaN(parseInt(val, 10)) && parseInt(val, 10) > 0, {
     message: 'Please enter a valid age.',
   }),
@@ -27,6 +28,7 @@ export function SignupForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
+      email: '',
       age: '',
       contact: '',
     },
@@ -53,7 +55,20 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your name" {...field} />
+                    <Input placeholder="Enter your name" {...field} suppressHydrationWarning/>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="example@gmail.com" {...field} suppressHydrationWarning/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -66,7 +81,7 @@ export function SignupForm() {
                 <FormItem>
                   <FormLabel>Age</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="Enter your age" {...field} />
+                    <Input type="number" placeholder="Enter your age" {...field} suppressHydrationWarning/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -89,6 +104,7 @@ export function SignupForm() {
                         className="rounded-l-none"
                         maxLength="10"
                         {...field}
+                        suppressHydrationWarning
                       />
                     </div>
                   </FormControl>
@@ -98,12 +114,12 @@ export function SignupForm() {
             />
           </CardContent>
           <CardFooter className="flex-col gap-4">
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full" suppressHydrationWarning>
               Proceed to Password Setup <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
              <p className="text-sm text-muted-foreground">
               Already have an account?{' '}
-              <Button variant="link" className="p-0 h-auto" onClick={() => router.push('/')}>
+              <Button variant="link" className="p-0 h-auto" onClick={() => router.push('/')} suppressHydrationWarning>
                 Log In
               </Button>
             </p>

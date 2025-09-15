@@ -41,7 +41,7 @@ export default function DashboardPage() {
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 flex items-center justify-center">
             <Avatar className="h-20 w-20">
-              <AvatarImage src={`https://i.pravatar.cc/150?u=${user.name}`} />
+              <AvatarImage src={`https://api.dicebear.com/8.x/initials/svg?seed=${encodeURIComponent(user.name)}`} alt={`${user.name}'s avatar`} />
               <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
                 {getInitials(user.name)}
               </AvatarFallback>
@@ -54,6 +54,7 @@ export default function DashboardPage() {
         </CardHeader>
         <CardContent className="flex flex-col items-center space-y-4">
           <div className="text-center text-muted-foreground">
+            <p>Email: {user.email}</p>
             <p>Age: {user.age}</p>
             <p>Contact: {user.contact}</p>
           </div>

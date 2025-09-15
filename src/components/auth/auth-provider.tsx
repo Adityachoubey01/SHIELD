@@ -15,6 +15,7 @@ const GESTURE_ATTEMPTS_LIMIT = 3;
 
 interface User {
   name: string;
+  email: string;
   age: string;
   contact: string;
 }

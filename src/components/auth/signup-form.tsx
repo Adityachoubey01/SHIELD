@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
+  email: z.string().email('Invalid email address.'),
   age: z.string().refine(val => !isNaN(parseInt(val, 10)) && parseInt(val, 10) > 0, {
     message: 'Please enter a valid age.',
   }),
@@ -27,6 +28,7 @@ export function SignupForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
+      email: '',
       age: '',
       contact: '',
     },
@@ -53,6 +55,19 @@ export function SignupForm() {
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Enter your name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="example@gmail.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
