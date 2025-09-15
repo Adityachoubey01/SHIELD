@@ -125,8 +125,8 @@ body {
   }
 
   .animate-bg-pan-fwd {
-    animation: bg-pan-fwd 0.8s ease-out 0.5s both,
-      fade-in 1s ease-out 0.5s both;
+    animation: bg-pan-fwd 8s linear infinite alternate both,
+      fade-in 1.5s ease-out 0.5s both;
   }
 
   @keyframes fade-in {
@@ -134,16 +134,16 @@ body {
       opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 0.3;
     }
   }
 
   @keyframes bg-pan-fwd {
     0% {
-      background-position: 0% 50%;
+      transform: scale(1) translateX(0);
     }
     100% {
-      background-position: 100% 50%;
+      transform: scale(1.1) translateX(-20px);
     }
   }
 }
