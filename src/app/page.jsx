@@ -3,18 +3,23 @@ import { VoiceLogin } from '@/components/auth/voice-login';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-600 p-4">
-      <div className="w-full max-w-md space-y-6">
-        <div className="flex flex-col items-center text-center">
-          <ShieldLogo className="mb-4 h-16 w-16 text-white drop-shadow-lg" />
-          <h1 className="font-headline text-5xl font-bold tracking-tight bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background p-4">
+      <div className="absolute inset-0 z-0">
+        <div className="animated-background"></div>
+      </div>
+      <div className="z-10 w-full max-w-md space-y-6">
+        <div className="flex animate-fade-in-up flex-col items-center text-center">
+          <ShieldLogo className="mb-4 h-20 w-20 text-white drop-shadow-lg" />
+          <h1 className="font-headline text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-neutral-300 to-white bg-clip-text text-transparent drop-shadow-md">
             SHIELD
           </h1>
-          <p className="text-lg text-indigo-200">
+          <p className="mt-2 text-lg text-indigo-200 drop-shadow-sm">
             The future of authentication is here.
           </p>
         </div>
-        <VoiceLogin />
+        <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <VoiceLogin />
+        </div>
       </div>
     </main>
   );
