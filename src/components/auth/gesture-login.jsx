@@ -81,7 +81,7 @@ export function GestureLogin() {
   };
 
   if (!isClient || !isVoiceVerified) {
-    return null; // or a loading spinner
+    return null; 
   }
   
   if (!gesturePassword) {
