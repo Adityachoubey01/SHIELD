@@ -104,4 +104,23 @@ body {
       transform: translateY(0);
     }
   }
+
+  .animate-wine-to-light {
+    animation: wine-to-light 1.5s ease-out forwards;
+  }
+
+  @keyframes wine-to-light {
+    0% {
+      background-color: hsl(340 50% 40%);
+      border-color: hsl(340 50% 40%);
+    }
+    30% {
+      background-color: hsl(340 50% 40%);
+      border-color: hsl(340 50% 40%);
+    }
+    100% {
+      background-color: hsl(var(--card));
+      border-color: hsl(var(--border));
+    }
+  }
 }
